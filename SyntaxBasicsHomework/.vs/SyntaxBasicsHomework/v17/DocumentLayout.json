@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50ED74D8-235E-4655-988E-B9CA949DDD4B}|WriteDuodecimalNumbersInRange\\WriteDuodecimalNumbersInRange.csproj|c:\\users\\asus\\source\\repos\\.netschoolcoherentsolutions\\syntaxbasicshomework\\writeduodecimalnumbersinrange\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50ED74D8-235E-4655-988E-B9CA949DDD4B}|WriteDuodecimalNumbersInRange\\WriteDuodecimalNumbersInRange.csproj|solutionrelative:writeduodecimalnumbersinrange\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7A0F3FD-550E-45EB-8B35-301BF33C6D47}|ISBNControlDigitCalculation\\ISBNControlDigitCalculation.csproj|c:\\users\\asus\\source\\repos\\.netschoolcoherentsolutions\\syntaxbasicshomework\\isbncontroldigitcalculation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A0F3FD-550E-45EB-8B35-301BF33C6D47}|ISBNControlDigitCalculation\\ISBNControlDigitCalculation.csproj|solutionrelative:isbncontroldigitcalculation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1808FA7C-E8A1-4845-896D-8B83A5EE1AC4}|ArrayInputOutput\\ArrayInputOutput.csproj|c:\\users\\asus\\source\\repos\\.netschoolcoherentsolutions\\syntaxbasicshomework\\arrayinputoutput\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1808FA7C-E8A1-4845-896D-8B83A5EE1AC4}|ArrayInputOutput\\ArrayInputOutput.csproj|solutionrelative:arrayinputoutput\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\WriteDuodecimalNumbersInRange\\Program.cs",
+              "RelativeDocumentMoniker": "WriteDuodecimalNumbersInRange\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\WriteDuodecimalNumbersInRange\\Program.cs",
+              "RelativeToolTip": "WriteDuodecimalNumbersInRange\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T20:18:56.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\ISBNControlDigitCalculation\\Program.cs",
+              "RelativeDocumentMoniker": "ISBNControlDigitCalculation\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\ISBNControlDigitCalculation\\Program.cs",
+              "RelativeToolTip": "ISBNControlDigitCalculation\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T19:34:12.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\ArrayInputOutput\\Program.cs",
+              "RelativeDocumentMoniker": "ArrayInputOutput\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\.NETSchoolCoherentSolutions\\SyntaxBasicsHomework\\ArrayInputOutput\\Program.cs",
+              "RelativeToolTip": "ArrayInputOutput\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwCcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T15:50:07.264Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
