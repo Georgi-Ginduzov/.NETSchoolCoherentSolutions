@@ -15,6 +15,7 @@
                 int number = int.Parse(symbol.ToString());
 
                 digitsSum += (number * multiplicationFactor);
+                multiplicationFactor--;
             }
 
             int remainder = digitsSum % 11;

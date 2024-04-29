@@ -2,50 +2,59 @@
 {
     internal class Program
     {
+        static int setValue(string value)
+        {
+            switch (value)
+            {
+                case "A":
+                    return 10;
+                case "B":
+                    return 11;
+                default:
+                    int number = int.Parse(value);
+                    
+                    if (number < 0)
+                    {
+                        Console.WriteLine("Invalid input! Please enter a positive number.");
+                        setValue(Console.ReadLine());                        
+                    }
+                    return number;
+            }
+        }
+
+        static void NormalPrinting(int from, int to)
+        {
+            for (int i = from; i <= to; i++)
+            {
+                Console.WriteLine(i + " ");
+            }
+        }
+
+        static void ReversedPrinting(int from, int to)
+        {
+            for (int i = to; i <= from; i--)
+            {
+                Console.WriteLine(i + " ");
+            }
+        }
+
         static void Main(string[] args)
         {
             Console.Write("Number a = ");
-            int a = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            int a = setValue(input);
 
             Console.Write("Number b = ");
-            int b = int.Parse(Console.ReadLine());
+            input = Console.ReadLine();
+            int b = setValue(Console.ReadLine());
 
-            for (int i = a; i <= b; i++)
+            if (a > b)
             {
-                string duodecimal = "";
-                while (i > 0)
-                {
-                    int remainder = i % 12;
-                    if (remainder == 10)
-                        duodecimal = "A" + duodecimal;
-                    else if (remainder == 11)
-                        duodecimal = "B" + duodecimal;
-                    else
-                        duodecimal = remainder.ToString() + duodecimal;
-
-                    i /= 12;
-                }
-                if (duodecimal.Count(c => c == 'A') == 2)
-                {
-                    int decimalNumber = 0;
-                    int multiplier = 1;
-                    for (int j = duodecimal.Length - 1; j >= 0; j--)
-                    {
-                        char digit = duodecimal[i];
-                        if (digit == 'A')
-                            decimalNumber += 10 * multiplier;
-                        else if (digit == 'B')
-                            decimalNumber += 11 * multiplier;
-                        else
-                            decimalNumber += int.Parse(digit.ToString()) * multiplier;
-
-                        multiplier *= 12;
-                    }
-
-
-
-                    Console.WriteLine(decimalNumber);
-                }
+                NormalPrinting(a, b);
+            }
+            else
+            {
+                ReversedPrinting(a, b);
             }
         }
     }
