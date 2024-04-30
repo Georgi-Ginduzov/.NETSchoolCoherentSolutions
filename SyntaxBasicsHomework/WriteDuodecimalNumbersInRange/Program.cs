@@ -1,61 +1,93 @@
-﻿namespace WriteDuodecimalNumbersInRange
+﻿using System.Text;
+
+namespace WriteDuodecimalNumbersInRange
 {
     internal class Program
     {
-        static int setValue(string value)
+        
+        static void PrintNumbers(int from, int to)
         {
-            switch (value)
+            int operation = to < 0 ? -1 : 1;
+
+            for (int i = from; i < to; i = i + operation)
             {
-                case "A":
-                    return 10;
-                case "B":
-                    return 11;
-                default:
-                    int number = int.Parse(value);
-                    
-                    if (number < 0)
-                    {
-                        Console.WriteLine("Invalid input! Please enter a positive number.");
-                        setValue(Console.ReadLine());                        
-                    }
-                    return number;
+                string duoDecimalNumber = ConvertDecimalToDuodecimal(i);
+
+                if (MatchesOfA(duoDecimalNumber) == 2)
+                {
+                    Console.Write(i + " ");
+                }
             }
         }
 
-        static void NormalPrinting(int from, int to)
+        static string ConvertDecimalToDuodecimal(int number)
         {
-            for (int i = from; i <= to; i++)
+            if (number < 0)
             {
-                Console.WriteLine(i + " ");
+                return "-" + ConvertDecimalToDuodecimal(-number);
             }
+            else if (number < 10)
+            {
+                return number.ToString();
+            }
+
+
+            StringBuilder duodecimalNumber = new StringBuilder();
+
+            while (number > 0)
+            {
+                int remainder = number % 12;
+
+                switch (remainder)
+                {
+                    case 10:
+                        duodecimalNumber.Insert(0, "A");
+                        break;
+                    case 11:
+                        duodecimalNumber.Insert(0, "B");
+                        break;
+                    default:
+                        duodecimalNumber.Insert(0, remainder);
+                    break;
+                }
+
+                number /= 12;
+            }
+
+            return duodecimalNumber.ToString();
         }
 
-        static void ReversedPrinting(int from, int to)
+        static int MatchesOfA(string number)
         {
-            for (int i = to; i <= from; i--)
+            int matches = 0;
+
+            foreach (char digit in number)
             {
-                Console.WriteLine(i + " ");
+                if (digit == 'A')
+                {
+                    matches++;
+                }
             }
+
+            return matches;
         }
 
         static void Main(string[] args)
         {
             Console.Write("Number a = ");
-            string input = Console.ReadLine();
-            int a = setValue(input);
+            int a = int.Parse(Console.ReadLine());
 
             Console.Write("Number b = ");
-            input = Console.ReadLine();
-            int b = setValue(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
 
             if (a > b)
             {
-                NormalPrinting(a, b);
+                int temp = a;
+                a = b;
+                b = temp;
             }
-            else
-            {
-                ReversedPrinting(a, b);
-            }
+
+            PrintNumbers(a, b);
         }
     }
 }

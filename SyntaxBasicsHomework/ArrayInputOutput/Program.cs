@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void printArray(int[] array)
+        static void PrintArray(int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -10,6 +10,7 @@
             }
             Console.Write(array[array.Length - 1]);
         }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the array's size: ");
@@ -23,7 +24,7 @@
             }
 
             Console.WriteLine("The original array is: ");
-            printArray(originalArray);
+            PrintArray(originalArray);
 
             int[] uniqueNumbersArray = new int[orignialArraySize];
             int uniqueElementsCount = 0;
@@ -49,7 +50,7 @@
 
             Array.Resize<int>(ref uniqueNumbersArray, uniqueElementsCount);
             Console.WriteLine("\n\nThe array with unique values is: ");
-            printArray(uniqueNumbersArray);
+            PrintArray(uniqueNumbersArray);
         }
     }
 }

@@ -21,6 +21,11 @@
             int remainder = digitsSum % 11;
 
             controlDigit = 11 - remainder;
+            
+            if (controlDigit == 11)
+            {
+                controlDigit = 0;
+            }
 
             Console.Write("Full ISBN --> ");
             if (controlDigit == 10)
