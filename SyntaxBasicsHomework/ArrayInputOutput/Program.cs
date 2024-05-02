@@ -2,6 +2,15 @@
 {
     internal class Program
     {
+        static void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write(array[i] + ", ");
+            }
+            Console.Write(array[array.Length - 1]);
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the array's size: ");
@@ -15,12 +24,7 @@
             }
 
             Console.WriteLine("The original array is: ");
-            for (int i = 0; i < orignialArraySize - 1; i++)
-            {
-                Console.Write(originalArray[i] + ", ");
-            }
-            Console.Write(originalArray[orignialArraySize - 1]);
-
+            PrintArray(originalArray);
 
             int[] uniqueNumbersArray = new int[orignialArraySize];
             int uniqueElementsCount = 0;
@@ -44,13 +48,9 @@
                 }
             }
 
+            Array.Resize<int>(ref uniqueNumbersArray, uniqueElementsCount);
             Console.WriteLine("\n\nThe array with unique values is: ");
-            for (int i = 0; i < uniqueElementsCount - 1; i++)
-            {
-                Console.Write(uniqueNumbersArray[i] + ", ");
-            }
-            Console.Write(uniqueNumbersArray[uniqueElementsCount - 1]);
-
+            PrintArray(uniqueNumbersArray);
         }
     }
 }

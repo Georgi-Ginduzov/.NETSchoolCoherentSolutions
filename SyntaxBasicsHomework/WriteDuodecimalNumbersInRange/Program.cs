@@ -1,7 +1,77 @@
-﻿namespace WriteDuodecimalNumbersInRange
+﻿using System.Text;
+
+namespace WriteDuodecimalNumbersInRange
 {
     internal class Program
     {
+        
+        static void PrintNumbers(int from, int to)
+        {
+            int operation = to < 0 ? -1 : 1;
+
+            for (int i = from; i < to; i = i + operation)
+            {
+                string duoDecimalNumber = ConvertDecimalToDuodecimal(i);
+
+                if (MatchesOfA(duoDecimalNumber) == 2)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+        }
+
+        static string ConvertDecimalToDuodecimal(int number)
+        {
+            if (number < 0)
+            {
+                return "-" + ConvertDecimalToDuodecimal(-number);
+            }
+            else if (number < 10)
+            {
+                return number.ToString();
+            }
+
+
+            StringBuilder duodecimalNumber = new StringBuilder();
+
+            while (number > 0)
+            {
+                int remainder = number % 12;
+
+                switch (remainder)
+                {
+                    case 10:
+                        duodecimalNumber.Insert(0, "A");
+                        break;
+                    case 11:
+                        duodecimalNumber.Insert(0, "B");
+                        break;
+                    default:
+                        duodecimalNumber.Insert(0, remainder);
+                    break;
+                }
+
+                number /= 12;
+            }
+
+            return duodecimalNumber.ToString();
+        }
+
+        static int MatchesOfA(string number)
+        {
+            int matches = 0;
+
+            foreach (char digit in number)
+            {
+                if (digit == 'A')
+                {
+                    matches++;
+                }
+            }
+
+            return matches;
+        }
+
         static void Main(string[] args)
         {
             Console.Write("Number a = ");
@@ -10,43 +80,14 @@
             Console.Write("Number b = ");
             int b = int.Parse(Console.ReadLine());
 
-            for (int i = a; i <= b; i++)
+            if (a > b)
             {
-                string duodecimal = "";
-                while (i > 0)
-                {
-                    int remainder = i % 12;
-                    if (remainder == 10)
-                        duodecimal = "A" + duodecimal;
-                    else if (remainder == 11)
-                        duodecimal = "B" + duodecimal;
-                    else
-                        duodecimal = remainder.ToString() + duodecimal;
-
-                    i /= 12;
-                }
-                if (duodecimal.Count(c => c == 'A') == 2)
-                {
-                    int decimalNumber = 0;
-                    int multiplier = 1;
-                    for (int j = duodecimal.Length - 1; j >= 0; j--)
-                    {
-                        char digit = duodecimal[i];
-                        if (digit == 'A')
-                            decimalNumber += 10 * multiplier;
-                        else if (digit == 'B')
-                            decimalNumber += 11 * multiplier;
-                        else
-                            decimalNumber += int.Parse(digit.ToString()) * multiplier;
-
-                        multiplier *= 12;
-                    }
-
-
-
-                    Console.WriteLine(decimalNumber);
-                }
+                int temp = a;
+                a = b;
+                b = temp;
             }
+
+            PrintNumbers(a, b);
         }
     }
 }
