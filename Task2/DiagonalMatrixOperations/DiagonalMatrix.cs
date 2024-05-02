@@ -1,127 +1,82 @@
-﻿using System.ComponentModel;
+﻿using System.Runtime.CompilerServices;
 
 namespace DiagonalMatrixOperations
 {
     public class DiagonalMatrix
     {
         private int[] _diagonal;
-        private int _size;
 
+        public DiagonalMatrix(params int[] elements)
+        {
+            _diagonal = elements ?? new int[0];
+        }
 
         public int Size
         {
-            get => _size;
-            private set
+            get
             {
-                if (value < 0)
-                {
-                    _size = 0;
-                }
+                return _diagonal.Length;
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*private readonly int[] _diagonal;
-
-        public DiagonalMatrix(int[] diagonal)
+        public int this[int i, int j]
         {
-            _diagonal = diagonal;
-        }
-
-        public int[] GetDiagonal()
-        {
-            return _diagonal;
-        }
-
-        public void SetDiagonal(int[] diagonal)
-        {
-            _diagonal = diagonal;
-        }
-
-        public int GetElement(int row, int column)
-        {
-            return row == column ? _diagonal[row] : 0;
-        }
-
-        public void SetElement(int row, int column, int value)
-        {
-            if (row == column)
+            get
             {
-                _diagonal[row] = value;
+                if (i < 0 || j < 0 || i >= Size || j >= Size)
+                    throw new IndexOutOfRangeException();
+                if (i != j)
+                    return 0;
+                return _diagonal[i];
             }
+            set
+            {
+                if (i >= 0 && j >= 0 && i < Size && j < Size && i == j)
+                    _diagonal[i] = value;
+            }
+        }
+
+        public int Track()
+        {
+            return _diagonal.Sum();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is DiagonalMatrix other)
+            {
+                return Size == other.Size && _diagonal.SequenceEqual(other._diagonal);
+            }
+            return false;
+        }
+
+        public DiagonalMatrix Add(DiagonalMatrix matrixB)
+        {
+            int[] result;
+            DiagonalMatrix smallerMatrix;
+
+            if (Size >= matrixB.Size)
+            {
+                result = this._diagonal;
+                smallerMatrix = matrixB;
+            }
+            else
+            {
+                result = matrixB._diagonal;
+                smallerMatrix = this;
+            }
+
+            for (int i = 0; i < smallerMatrix.Size; i++)
+            {
+                result[i] += smallerMatrix[i, i];
+            }
+
+            return new DiagonalMatrix(result);
         }
 
         public override string ToString()
         {
-            var result = "";
-            for (var i = 0; i < _diagonal.Length; i++)
-            {
-                for (var j = 0; j < _diagonal.Length; j++)
-                {
-                    result += GetElement(i, j) + " ";
-                }
-
-                result += "\n";
-            }
-
-            return result;
-        }*/
+            return string.Join(", ", _diagonal);
+        }
     }
 }

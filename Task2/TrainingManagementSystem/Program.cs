@@ -1,4 +1,4 @@
-﻿namespace DiagonalMatrixOperations
+﻿namespace TrainingManagementSystem
 {
     internal class Program
     {
