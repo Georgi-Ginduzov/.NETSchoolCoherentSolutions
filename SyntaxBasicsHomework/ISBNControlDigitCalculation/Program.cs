@@ -18,16 +18,15 @@
                 multiplicationFactor--;
             }
 
+
             int remainder = digitsSum % 11;
 
-            controlDigit = 11 - remainder;
-            
-            if (controlDigit == 11)
-            {
-                controlDigit = 0;
-            }
 
+
+            controlDigit = (11 - remainder) % 11;
+            
             Console.Write("Full ISBN --> ");
+            
             if (controlDigit == 10)
             {
                 Console.Write(firstNineISBNDigits + "X");
