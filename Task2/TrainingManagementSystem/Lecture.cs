@@ -10,5 +10,10 @@
         }
 
         public string Topic { get => topic; set => topic = value; }
+
+        public override object Clone()
+        {
+            return new Lecture(Topic) {Description = Description };
+        }
     }
 }
