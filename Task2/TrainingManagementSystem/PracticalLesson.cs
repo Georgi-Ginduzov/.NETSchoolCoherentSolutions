@@ -13,5 +13,10 @@
 
         public string LinkToCondition { get => linkToCondition; set => linkToCondition = value; }
         public string LinkToSolution { get => linkToSolution; set => linkToSolution = value; }
+
+        public override object Clone()
+        {
+            return new PracticalLesson(LinkToCondition, LinkToSolution) { Description = Description };
+        }
     }
 }

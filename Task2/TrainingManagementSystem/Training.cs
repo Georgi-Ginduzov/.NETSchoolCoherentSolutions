@@ -1,25 +1,43 @@
-﻿namespace TrainingManagementSystem
+﻿
+namespace TrainingManagementSystem
 {
     internal class Training : TrainingComponent
     {
-        List<TrainingComponent> trainingsAndExercises = new List<TrainingComponent>();
-
+        private const int DefaultSize = 10;
+        TrainingComponent[] _components;
         public Training()
         {
-            trainingsAndExercises = new List<TrainingComponent>();
+            _components = new TrainingComponent[DefaultSize];
         }
 
-        public List<TrainingComponent> TrainingsAndExercises => trainingsAndExercises;
+        public TrainingComponent[] TrainingsAndExercises => _components;
 
         public bool Add(TrainingComponent trainingComponent)
         {
-            if (trainingComponent.GetType() != GetType() && TrainingsAndExercises.Contains(trainingComponent))
+            if (IsValidType(trainingComponent))
             {
-                trainingsAndExercises.Add(trainingComponent);
+                for (int i = 0; i < _components.Length; i++)
+                {
+                    if (_components[i] == null)
+                    {
+                        _components[i] = trainingComponent;
+                        return true;
+                    }
+                }
+
+                TrainingComponent[] newArray = new TrainingComponent[_components.Length * 2];
+                Array.Copy(_components, newArray, _components.Length);
+                newArray[_components.Length] = trainingComponent;
+                _components = newArray;
                 return true;
             }
 
             return false;
+        }
+
+        private bool IsValidType(TrainingComponent trainingComponent)
+        {
+            return trainingComponent.GetType() == typeof(Lecture) || trainingComponent.GetType() == typeof(PracticalLesson);
         }
 
         public bool IsPractical()
@@ -35,25 +53,15 @@
             return true;
         }
 
-        public Training Clone()
+        public override object Clone()
         {
-            Training clone = new Training{ Description = this.Description };
+            Training clone = new Training { Description = this.Description };
 
-            foreach (TrainingComponent trainingComponent in TrainingsAndExercises)
+            foreach (var component in _components)
             {
-                if (trainingComponent is Lecture lecture)
+                if (component != null)
                 {
-                    Lecture newLecture = new Lecture(lecture.Topic);
-                    newLecture.Description = lecture.Description;
-
-                    clone.Add(newLecture);
-                }
-                else if (trainingComponent is PracticalLesson practicalLesson)
-                {
-                    PracticalLesson newPracticalLesson = new PracticalLesson(practicalLesson.LinkToCondition, practicalLesson.LinkToSolution);
-                    newPracticalLesson.Description = practicalLesson.Description;
-
-                    clone.Add(newPracticalLesson);
+                    clone.Add((TrainingComponent)component.Clone());
                 }
             }
 
