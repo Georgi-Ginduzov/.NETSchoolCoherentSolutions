@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace DiagonalMatrixOperations
 {
@@ -50,33 +50,10 @@ namespace DiagonalMatrixOperations
             return false;
         }
 
-        public DiagonalMatrix Add(DiagonalMatrix matrixB)
-        {
-            int[] result;
-            DiagonalMatrix smallerMatrix;
-
-            if (Size >= matrixB.Size)
-            {
-                result = this._diagonal;
-                smallerMatrix = matrixB;
-            }
-            else
-            {
-                result = matrixB._diagonal;
-                smallerMatrix = this;
-            }
-
-            for (int i = 0; i < smallerMatrix.Size; i++)
-            {
-                result[i] += smallerMatrix[i, i];
-            }
-
-            return new DiagonalMatrix(result);
-        }
-
         public override string ToString()
         {
             return string.Join(", ", _diagonal);
         }
+
     }
 }
