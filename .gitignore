@@ -1,0 +1,4 @@
+# Ignore Object files
+[Oo]bj/
+# Ignore .NET build files
+[Bb]in/
