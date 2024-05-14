@@ -36,7 +36,7 @@ namespace DiagonalMatrixOperationsTests
             DiagonalMatrix matrixA = new DiagonalMatrix(2, 1, 2);
             DiagonalMatrix matrixB = new DiagonalMatrix(1, 3);
 
-            Assert.AreEqual(new DiagonalMatrix(2, 1, 2, 3), matrixA.Add(matrixB));
+            Assert.AreEqual(new DiagonalMatrix(3, 4, 2), matrixA.Add(matrixB));
         }
 
         [Test]
