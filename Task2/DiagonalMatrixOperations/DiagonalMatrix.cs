@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace DiagonalMatrixOperations
 {
@@ -24,7 +24,7 @@ namespace DiagonalMatrixOperations
             get
             {
                 if (i < 0 || j < 0 || i >= Size || j >= Size)
-                    throw new IndexOutOfRangeException();
+                    return 0;
                 if (i != j)
                     return 0;
                 return _diagonal[i];
