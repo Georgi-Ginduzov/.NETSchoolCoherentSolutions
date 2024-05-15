@@ -2,34 +2,33 @@
 {
     public static class DiagonalMatrixExtentions
     {
-        public static DiagonalMatrix Add(this DiagonalMatrix matrixA, DiagonalMatrix matrixB)
+        public static DiagonalMatrix<T> Add<T>(this DiagonalMatrix<T> matrixA, DiagonalMatrix<T> matrixB, Func<T, T, T> add)
         {
-            DiagonalMatrix resultMatrix;
-            DiagonalMatrix smallerMatrix;
+            DiagonalMatrix<T> resultMatrix;
+            DiagonalMatrix<T> smallerMatrix;
 
             if (matrixA.Size >= matrixB.Size)
             {
-
-                resultMatrix = new DiagonalMatrix(GetArrayFromMatrix(matrixA));
-                smallerMatrix = new DiagonalMatrix(GetArrayFromMatrix(matrixB));
+                resultMatrix = new DiagonalMatrix<T>(matrixA.Size);
+                smallerMatrix = new DiagonalMatrix<T>(matrixB.Size);
             }
             else
             {
-                resultMatrix = new DiagonalMatrix(GetArrayFromMatrix(matrixB));
-                smallerMatrix = new DiagonalMatrix(GetArrayFromMatrix(matrixA));
+                resultMatrix = new DiagonalMatrix<T>(matrixB.Size);
+                smallerMatrix = new DiagonalMatrix<T>(matrixA.Size);
             }
 
             for (int i = 0; i < smallerMatrix.Size; i++)
             {
-                resultMatrix[i, i] += smallerMatrix[i, i];
+                resultMatrix[i, i] = add(matrixA[i,i], matrixB[i,i]);
             }
 
             return resultMatrix;
         }
 
-        private static int[] GetArrayFromMatrix(DiagonalMatrix matrix)
+        private static T[] GetArrayFromMatrix<T>(DiagonalMatrix<T> matrix)
         {
-            int[] array = new int[matrix.Size];
+            T[] array = new T[matrix.Size];
             for (int i = 0; i < matrix.Size; i++)
             {
                 array[i] = matrix[i, i];
@@ -37,5 +36,7 @@
 
             return array;
         }
+
+        
     }
 }
