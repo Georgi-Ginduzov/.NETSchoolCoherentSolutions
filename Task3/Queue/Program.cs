@@ -12,7 +12,7 @@
                 queue.Enqueue(5);
                 queue.Enqueue(7);
 
-                var tailQueue = queue.Tail();
+                var tailQueue = queue.Tail<int>();
 
                 while (!tailQueue.IsEmpty())
                 {
