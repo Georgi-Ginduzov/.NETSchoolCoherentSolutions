@@ -4,25 +4,27 @@
     {
         public static IQueue<T> Tail<T>(this IQueue<T> queue) where T : struct
         {
-            var tempQueue = queue;
-            var newQueue = new Queue<T>();
-            bool isFirst = true;
+            var tempQueue = new Queue<T>();
+            var tailedQueue = new Queue<T>();
 
-            if (queue.IsEmpty())
+            T item = queue.Dequeue();
+            tempQueue.Enqueue(item);
+
+            while (!queue.IsEmpty())
             {
-                throw new InvalidOperationException("Queue is empty!");
+                item = queue.Dequeue();
+                tempQueue.Enqueue(item);
+                tailedQueue.Enqueue(item);
             }
 
+            // restore the original queue
             while (!tempQueue.IsEmpty())
             {
-                T item = tempQueue.Dequeue();
-                if (!isFirst)
-                    newQueue.Enqueue(item);
-
-                isFirst = false;
+                queue.Enqueue(tempQueue.Dequeue());
             }
 
-            return newQueue;
+            return tailedQueue;
         }
+
     }
 }
