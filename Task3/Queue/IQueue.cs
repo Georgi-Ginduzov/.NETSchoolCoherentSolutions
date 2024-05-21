@@ -6,4 +6,7 @@
         T Dequeue();
         bool IsEmpty();
     }
+task
+}
+
 }
