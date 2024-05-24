@@ -7,9 +7,9 @@
 
         public RationalNumber(int numerator, int denominator)
         {
-            if (denominator == 0)
+            if (denominator <= 0)
             {
-                throw new ArgumentException("Denominator cannot be zero.");
+                throw new ArgumentException("Denominator cannot less or equal to zero.");
             }
 
             int gcd = GCD(numerator, denominator);
@@ -52,8 +52,10 @@
         {
             if (obj is RationalNumber)
             {
-                RationalNumber other = obj as RationalNumber;
-                return ((double)this.Numerator / this.Denominator).CompareTo((double)other.Numerator / other.Denominator);
+                double current = (double)this.Numerator / this.Denominator);
+                double other = (double)(obj as RationalNumber).Numerator / (obj as RationalNumber).Denominator;
+                
+                return current.CompareTo(other);
             }
 
             return -1;
