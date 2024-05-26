@@ -6,7 +6,7 @@ namespace BookCollection
     {
         static void Main(string[] args)
         {
-            IBookRepository catalog = new BookRepository();
+            ICatalog catalog = new Catalog();
 
             Book book1 = BookFactory.CreateBook("Book One", new DateTime(2001, 5, 20), new List<string> { "Author A", "Author B" });
             Book book2 = BookFactory.CreateBook("Book Two", new DateTime(1999, 8, 15), new List<string> { "Author A" });
