@@ -1,9 +1,10 @@
 ﻿using BookCollection.Contracts;
+using System.Collections;
 using System.Text.RegularExpressions;
 
 namespace BookCollection
 {
-    public class Catalog : ICatalog
+    public class Catalog : ICatalog, IEnumerable<Book>
     {
         private Dictionary<string, Book> _books;
         private static readonly Regex _isbnFormat = new Regex(@"^\d{3}-\d-\d{2}-\d{6}-\d$|^\d{13}$");
@@ -13,11 +14,17 @@ namespace BookCollection
             _books = new Dictionary<string, Book>();
         }
 
+
         public void AddBook(string isbn, Book book)
         {
             if (!_isbnFormat.IsMatch(isbn))
             {
                 throw new ArgumentException("Invalid ISBN format.");
+            }
+
+            if (_books.ContainsKey(isbn))
+            {
+                throw new Exception("Book with the same isbn already exists!");
             }
 
             string normalizedIsbn = NormalizeIsbn(isbn);
@@ -55,5 +62,13 @@ namespace BookCollection
         {
             return isbn.Replace("-", "");
         }
+
+        
+
+        
+
+        public IEnumerator<Book> GetEnumerator() => _books.Values.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
