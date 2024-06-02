@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfBook>
+    <Book>
+      <Title>The alchemist</Title>
+      <PublicationDate>2001-05-20T00:00:00</PublicationDate>
+      <Authors>
+        <string>Paulo Coelho</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Atomic habits</Title>
+      <PublicationDate>1999-08-15T00:00:00</PublicationDate>
+      <Authors>
+        <string>James Clear</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Good Omens</Title>
+      <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+      <Authors>
+        <string>Terry Pratchett</string>
+        <string>Neil Gaiman</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Beautiful Creatures</Title>
+      <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+      <Authors>
+        <string>Kami Garcia</string>
+        <string>Margaretvar Stohl</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Nick &amp; Norah's Infinite Playlist</Title>
+      <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+      <Authors>
+        <string>Rachel Cohn</string>
+        <string>David Levithan</string>
+      </Authors>
+    </Book>
+  </ArrayOfBook>
+  <ArrayOfBook>
+    <Book>
+      <Title>The Valkyries</Title>
+      <PublicationDate>1992-01-01T00:00:00</PublicationDate>
+      <Authors>
+        <string>Paulo Coelho</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Brida</Title>
+      <PublicationDate>1990-01-01T00:00:00</PublicationDate>
+      <Authors>
+        <string>Paulo Coelho</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Good Omens</Title>
+      <PublicationDate>1990-01-01T00:00:00</PublicationDate>
+      <Authors>
+        <string>Terry Pratchett</string>
+        <string>Neil Gaiman</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>American Gods</Title>
+      <PublicationDate>2001-01-01T00:00:00</PublicationDate>
+      <Authors>
+        <string>Neil Gaiman</string>
+      </Authors>
+    </Book>
+    <Book>
+      <Title>Neverwhere</Title>
+      <PublicationDate>1996-01-01T00:00:00</PublicationDate>
+      <Authors>
+        <string>Neil Gaiman</string>
+      </Authors>
+    </Book>
+  </ArrayOfBook>
+</ArrayOfArrayOfBook>
