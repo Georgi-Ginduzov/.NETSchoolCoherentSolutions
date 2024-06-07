@@ -1,4 +1,5 @@
 ﻿using BookCollection.Contracts;
+using BookCollection.Entities;
 using System.Xml.Serialization;
 
 namespace BookCollection.Repositories
@@ -11,7 +12,6 @@ namespace BookCollection.Repositories
 
         public XMLRepository()
         {
-
         }
 
         public T Get()
@@ -45,7 +45,6 @@ namespace BookCollection.Repositories
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(T));
-
                 using (StreamWriter writer = new StreamWriter(_filePath))
                 {
                     serializer.Serialize(writer, entry);

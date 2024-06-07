@@ -1,4 +1,6 @@
-﻿namespace BookCollection.Contracts
+﻿using BookCollection.Entities;
+
+namespace BookCollection.Contracts
 {
     public interface ISortStrategy
     {

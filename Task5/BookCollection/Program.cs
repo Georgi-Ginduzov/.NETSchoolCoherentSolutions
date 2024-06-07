@@ -27,9 +27,14 @@ namespace BookCollection
             catalog.Add(book5);
 
 
-            IRepository<Catalog> repo = new XMLRepository<Catalog>();
-            var catalogCopy =  repo.Get();
-
+            var xmlRepo = new XMLRepository<Catalog>();
+            var xmlCatalog = xmlRepo.Get();
+            xmlRepo.Save(xmlCatalog);
+            
+            var jsonCatalogRepo = new JSONCatalogRepository();
+            jsonCatalogRepo.Save(catalog);
+            var jsonCatalog = jsonCatalogRepo.GetCatalog();
+            
 
         }        
     }    

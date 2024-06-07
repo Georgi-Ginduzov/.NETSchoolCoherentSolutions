@@ -28,6 +28,10 @@ namespace BookCollection.Entities
             {
                 Add(book);
             }
+            else if (typeof(object) is IEnumerable<Book> books)
+            {
+                Add(books);
+            }
             else
             {
                 throw new ArgumentException("The item is not a book. It cannot be added to the catalog.");
@@ -52,27 +56,61 @@ namespace BookCollection.Entities
             {
                 Console.WriteLine(ex.Message);
             }
+        }
 
+        public void Add(IEnumerable<Book> books)
+        {
+            foreach (var book in books)
+            {
+                Add(book);
+            }
         }
 
         public Dictionary<string, List<Book>> GetBooksByTheirAuthor()
         {
             var booksOfAuthors = new Dictionary<string, List<Book>>();
 
-            foreach (var item in _books.Values)
+            foreach (var book in _books.Values)
             {
-                foreach (var author in item.Authors)
-                {
-                    //booksOfAuthors[author].Add(item);
-
-                }
+                //booksOfAuthors[author].Add(item);
             }
 
             return booksOfAuthors;
         }
 
         public IEnumerator<Book> GetEnumerator() => _books.Values.GetEnumerator();
-
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Catalog other = obj as Catalog;
+
+            if (other.Books.Count != Books.Count)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < Books.Count; i++)
+            {
+                if (Books.ElementAt(i).Equals(other.Books.ElementAt(i)))
+                {
+                    continue;
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Books);
+        }
     }
 }
