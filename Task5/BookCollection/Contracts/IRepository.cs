@@ -2,7 +2,7 @@
 {
     public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
-        bool SaveAll(IEnumerable<T> items);
+        T Get();
+        bool Save(T items);
     }
 }
