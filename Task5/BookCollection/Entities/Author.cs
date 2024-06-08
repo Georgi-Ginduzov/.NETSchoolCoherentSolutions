@@ -13,7 +13,7 @@
         {
             FirstName = firstName;
             LastName = lastName;
-            BirthDate = (DateTime)birthDate;
+            BirthDate = birthDate;
         }
 
         public string FirstName 
@@ -48,7 +48,7 @@
                 }
             }
         }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
         public override bool Equals(object obj)
             => obj is Author other ? FirstName == other.FirstName && LastName == other.LastName && BirthDate == other.BirthDate : false;
