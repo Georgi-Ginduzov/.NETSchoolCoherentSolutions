@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <ISBN>1234567890123</ISBN>
+    <Title>The alchemist</Title>
+    <PublicationDate>2001-05-20T00:00:00</PublicationDate>
+    <Authors>
+      <Author>
+        <FirstName>Paulo</FirstName>
+        <LastName>Coelho</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+    </Authors>
+  </Book>
+  <Book>
+    <ISBN>1234568890123</ISBN>
+    <Title>Atomic habits</Title>
+    <PublicationDate>1999-08-15T00:00:00</PublicationDate>
+    <Authors>
+      <Author>
+        <FirstName>James</FirstName>
+        <LastName>Clear</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+    </Authors>
+  </Book>
+  <Book>
+    <ISBN>4567890123456</ISBN>
+    <Title>Good Omens</Title>
+    <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+    <Authors>
+      <Author>
+        <FirstName>Terry</FirstName>
+        <LastName>Pratchett</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+    </Authors>
+  </Book>
+  <Book>
+    <ISBN>7867430123456</ISBN>
+    <Title>Beautiful Creatures</Title>
+    <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+    <Authors>
+      <Author>
+        <FirstName>Kami</FirstName>
+        <LastName>Garcia</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+      <Author>
+        <FirstName>Margaretvar</FirstName>
+        <LastName>Stohl</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+    </Authors>
+  </Book>
+  <Book>
+    <ISBN>1237890123456</ISBN>
+    <Title>Nick &amp; Norah's Infinite Playlist</Title>
+    <PublicationDate>2010-03-10T00:00:00</PublicationDate>
+    <Authors>
+      <Author>
+        <FirstName>Rachel</FirstName>
+        <LastName>Cohn</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+      <Author>
+        <FirstName>David</FirstName>
+        <LastName>Levithan</LastName>
+        <BirthDate>0001-01-01T00:00:00</BirthDate>
+      </Author>
+    </Authors>
+  </Book>
+</Catalog>

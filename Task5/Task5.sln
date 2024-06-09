@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matrix", "SparceMatrix\Matr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCollection", "BookCollection\BookCollection.csproj", "{C391487C-A174-4982-B993-78035F9C4474}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "..\..\..\..\Desktop\Tests\Tests.csproj", "{4987A32F-D578-463E-B46C-D671E3409542}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCollectionTests", "BookCollectionTests\BookCollectionTests.csproj", "{97B8A055-5836-4B53-9349-79E290BBC483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{C391487C-A174-4982-B993-78035F9C4474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C391487C-A174-4982-B993-78035F9C4474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C391487C-A174-4982-B993-78035F9C4474}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4987A32F-D578-463E-B46C-D671E3409542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4987A32F-D578-463E-B46C-D671E3409542}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4987A32F-D578-463E-B46C-D671E3409542}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4987A32F-D578-463E-B46C-D671E3409542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B8A055-5836-4B53-9349-79E290BBC483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B8A055-5836-4B53-9349-79E290BBC483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B8A055-5836-4B53-9349-79E290BBC483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B8A055-5836-4B53-9349-79E290BBC483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
