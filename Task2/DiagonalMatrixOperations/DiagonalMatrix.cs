@@ -1,14 +1,15 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace DiagonalMatrixOperations
+﻿namespace DiagonalMatrixOperations
 {
-    public class DiagonalMatrix
+    public class DiagonalMatrix<T>
     {
-        private int[] _diagonal;
+        private T[] _diagonal;
 
-        public DiagonalMatrix(params int[] elements)
+        public DiagonalMatrix(int size)
         {
-            _diagonal = elements ?? new int[0];
+            if (size < 0)
+                throw new ArgumentException("Size must be non-negative.");
+
+            _diagonal = new T[size];
         }
 
         public int Size
@@ -19,31 +20,32 @@ namespace DiagonalMatrixOperations
             }
         }
 
-        public int this[int i, int j]
+        public event Action<int, int, T, T> ElementChanged;
+        public T this[int i, int j]
         {
             get
             {
                 if (i < 0 || j < 0 || i >= Size || j >= Size)
-                    return 0;
+                    throw new IndexOutOfRangeException();
                 if (i != j)
-                    return 0;
+                    return default(T);
                 return _diagonal[i];
             }
             set
             {
-                if (i >= 0 && j >= 0 && i < Size && j < Size && i == j)
+                if (i < 0 || j < 0 || i >= Size || j >= Size)
+                    throw new IndexOutOfRangeException();
+                if (i == j && !EqualityComparer<T>.Default.Equals(_diagonal[i], value))
+                {
+                    ElementChanged?.Invoke(i, j, _diagonal[i], value);
                     _diagonal[i] = value;
+                }
             }
-        }
-
-        public int Track()
-        {
-            return _diagonal.Sum();
         }
 
         public override bool Equals(object obj)
         {
-            if (obj is DiagonalMatrix other)
+            if (obj is DiagonalMatrix<T> other)
             {
                 return Size == other.Size && _diagonal.SequenceEqual(other._diagonal);
             }
